@@ -23,7 +23,8 @@ import joblib
 import streamlit as st
 
 # Load the dataset
-data = pd.read_csv('bankruptcy_data.csv')
+data = pd.read_excel(uploaded_file, engine="openpyxl")
+    data.columns = data.columns.str.strip() 
 
 # EDA and Visualizations
 st.title("Exploratory Data Analysis and Model Evaluation")

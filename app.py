@@ -23,9 +23,11 @@ import joblib
 import streamlit as st
 
 # Load the dataset
-data = pd.read_excel(uploaded_file, engine="openpyxl")
-data.columns = data.columns.str.strip() 
-
+st.title("Upload an Excel File")
+uploaded_file = st.file_uploader("Choose an Excel file", type=["xlsx", "xls"])
+if uploaded_file is not None:
+    data = pd.read_excel(uploaded_file, engine="openpyxl")
+    data.columns = data.columns.str.strip()
 # EDA and Visualizations
 st.title("Exploratory Data Analysis and Model Evaluation")
 

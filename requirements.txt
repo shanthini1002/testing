@@ -2,3 +2,6 @@ pandas
 openxyl
 numpy
 streamlit
+seaborn
+matplotlib.pyplot
+joblib
